@@ -1,0 +1,36 @@
+@import '~src/styles/variables';
+
+.login {
+  &__container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+  }
+  &__logo-holder {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__form {
+    width: 360px;
+    padding: 20px;
+    margin: 0 auto;
+    border: 1px solid $color-neutral-gray-dark;
+    background-color: $color-neutral-gray-light;
+
+    .username{
+      padding-left: 45px;
+      background-image: url("../../../assets/Icons/24/icon-24-person-grey.png");
+      background-position: 10px 50%;
+      background-repeat: no-repeat;
+    }
+    .password{
+      padding-left: 45px;
+      background-image: url("../../../assets/Icons/24/icon-24-password.png");
+      background-position: 10px 50%;
+      background-repeat: no-repeat;
+    }
+    .error{
+      color: $color-primary-red;
+    }
+  }
+}

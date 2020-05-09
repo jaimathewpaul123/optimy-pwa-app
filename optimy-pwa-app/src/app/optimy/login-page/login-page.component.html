@@ -1,0 +1,22 @@
+<div class="login__container">
+  <div class="login__form">
+    <div class="login__logo-holder">
+      <img src="{{constants.logoPath}}"
+           alt="logo-image">
+    </div>
+    <form [formGroup]="loginForm">
+      <div class="-mb-20">
+        <input class="username" placeholder="Your Employee Id" type="text" formControlName="userName">
+      </div>
+      <div  class="-mb-20">
+        <input class="password" placeholder="Your Password" type="password" formControlName="password">
+      </div>
+      <div class="error">asdasdasd afasfafadsasd asdfasd</div>
+      <div class="-text-align-center -mt-20">
+        <button class="btn btn-blue" [disabled]="!loginForm.valid" (click)="login()">
+          Log In
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+// NOTE: 10px = 1rem
+$font-family-sans-serif: 'rawline', sans-serif;
+
+//color-primary COLORS
+$color-primary-beige: #F5DDC0;
+$color-primary-dark: #000000;
+$color-primary-green: #339B54;
+$color-primary-light: #FFFFFF;
+$color-primary-pink: #CF5198;
+$color-primary-yellow: #E4B633;
+$color-primary-red: #F44336;
+$color-primary-pink-dark: #9D3E74;
+$color-primary-pink-8: #D974AD;
+//color-secondary COLORS
+$color-secondary-blue: #42A5F5;
+$color-secondary-indigo: #7E57C2;
+$color-secondary-orange: #FFB300;
+$color-secondary-purple: #BA68C8;
+$color-secondary-red: #EF5350;
+$color-secondary-teal: #4DB6AC;
+$color-secondary-green: #8BC34A;
+$color-secondary-cyan: #00BCD4;
+$color-secondary-pink: #E91E63;
+//color-neutral COLORS
+$color-neutral-gray-light: #FAFAFA;
+$color-neutral-gray-dark: #EEEEEE;
+$color-natural-gray: #F1F1F1;
+$color-text-color: #010101;
+
+//SPACING
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 40px;
+$spacing-xxl: 48px;
+
+// LINE HEIGHT
+$line-height-xxl: 2;
+$line-height-xl: 1.8;
+$line-height-lg: 1.6;
+$line-height-md: 1.4;
+$line-height: 1.5;
+$line-height-sm: 1.3;
+$line-height-xs: 1.2;
+$line-height-trim: 1;
+
+// FONT WEIGHT
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 900;
+
+// FONT SIZE
+$font-size-xxxl: 4.2rem;
+$font-size-copy-xxxl: 3.2rem;
+
+$font-size-xxl: 3.2rem;
+$font-size-copy-xxl: 2.8rem;
+
+$font-size-xl: 2.8rem;
+$font-size-copy-xl: 2.4rem;
+
+$font-size-lg: 2.4rem;
+$font-size-copy-lg: 2rem;
+
+$font-size-md: 2rem;
+$font-size-copy-md: 1.8rem;
+
+$font-size-sm: 1.6rem;
+$font-size-copy-sm: 1.4rem;
+
+$font-size-xs: 1.4rem;
+$font-size-copy-xs: 1.2rem;
+
+$font-size-xxs: 1.2rem;
+$font-size-copy-xxs: 1rem;
+
+
+$font-size-20: 1.2rem;
+$font-size-30: 1.6rem;
+$font-size-40: 2rem;
+$font-size-50: 2.4rem;
+$font-size-60: 3rem;
+
+//border-radius
+
+$border-radius-large: 4px;
+$border-radius-small: 2px;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 400,
+  sm: 600px,
+  md: 900px,
+  lg: 1200px,
+  xl: 1500px,
+  xxl: 1800px
+) !default;
+
+// Image Path
+$img-path: "~/assets/images";
+
+// Max Z-index
+$max-z-index: 40;
+
+//Default
+
+$base-font-size: 10px;
+$default-font-color: $color-neutral-gray-light;
+$default-font-size: $font-size-sm;
+$default-line-height: $line-height-md;
+$default-font-weight: $font-weight-normal;
+$default-font-family: $font-family-sans-serif;
+$input-border-color: $color-neutral-gray-dark;
+$input-border-radius: $border-radius-large;
+$input-default-height: $spacing-xl;
+$default-body-color: $color-natural-gray;
+$section-spacing: $spacing-lg;
