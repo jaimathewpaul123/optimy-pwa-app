@@ -4,7 +4,7 @@ import {UtilsService} from 'src/app/core/services/utils.service';
 import {Constants} from 'src/app/core/constants/constants';
 import {catchError} from 'rxjs/operators';
 import {Observable, of} from 'rxjs';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-task-details-page',
@@ -14,7 +14,9 @@ import {ActivatedRoute} from '@angular/router';
 export class TaskDetailsPageComponent implements OnInit {
   taskDetail: Task;
   id: number;
-  constructor(private utils: UtilsService, private route: ActivatedRoute) {
+  constructor(private utils: UtilsService,
+              private route: ActivatedRoute,
+              private router: Router) {
     this.route.params.subscribe( params => {
       this.id = params.id;
     });
@@ -31,5 +33,9 @@ export class TaskDetailsPageComponent implements OnInit {
     this.utils.getTaskDetails(requestBody).subscribe(response => {
       this.taskDetail = response;
     }, catchError(e => of(e)));
+  }
+
+  back(){
+    this.router.navigateByUrl(Constants.routes.taskHome);
   }
 }
