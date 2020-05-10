@@ -2,18 +2,18 @@
   <div class="login__form">
     <div class="login__logo-holder">
       <img src="{{constants.logoPath}}"
-           alt="logo-image">
+           alt="logo-image" aria-label="logo">
     </div>
     <form [formGroup]="loginForm">
       <div class="-mb-20">
-        <input class="username" placeholder="Your Employee Id" type="text" formControlName="userName">
+        <input aria-label="username" class="username" placeholder="Your Employee Id" type="text" formControlName="userName">
         <div class="error" *ngIf="(loginForm?.controls?.userName?.touched || isFormSubmitted) &&
              loginForm?.controls?.userName?.invalid" >
           Please enter a user id
         </div>
       </div>
       <div  class="-mb-20">
-        <input class="password" placeholder="Your Password" type="password" formControlName="password">
+        <input aria-label="password" class="password" placeholder="Your Password" type="password" formControlName="password">
         <div class="error" *ngIf="(loginForm?.controls?.password?.touched || isFormSubmitted) &&
              loginForm?.controls?.password?.invalid">
           Please enter a password
@@ -21,7 +21,7 @@
       </div>
       <div class="error" *ngIf="loginError">Invalid used Id or Password</div>
       <div class="-text-align-center -mt-20">
-        <button class="btn btn-blue" (click)="login()">
+        <button class="btn btn-blue" aria-label="login" (click)="login()">
           Log In
         </button>
       </div>
