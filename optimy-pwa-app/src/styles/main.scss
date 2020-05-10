@@ -40,7 +40,7 @@ body {
   &:hover,
   &:focus,
   &:active {
-    color: $color-text-color;
+    color: $color-primary-light;
   }
 }
 .btn-blue {
@@ -70,4 +70,11 @@ input {
 }
 .-text-align-center {
   text-align: center;
+}
+.my-task{
+  padding: 10px 20px;
+  color: $color-primary-light;
+  border-radius: 10px 10px 0 0;
+  font-size: $font-size-sm;
+  background-color: $color-secondary-indigo;
 }

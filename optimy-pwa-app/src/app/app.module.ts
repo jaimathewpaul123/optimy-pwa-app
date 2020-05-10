@@ -9,12 +9,18 @@ import { LoginPageComponent } from './optimy/login-page/login-page.component';
 import { PageNotFoundComponent } from './optimy/page-not-found/page-not-found.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { TaskListPageComponent } from './optimy/task-list-page/task-list-page.component';
+import { HeaderComponent } from './optimy/header/header.component';
+import { TaskDetailsPageComponent } from './optimy/task-details-page/task-details-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TaskListPageComponent,
+    HeaderComponent,
+    TaskDetailsPageComponent
   ],
   imports: [
     BrowserModule,

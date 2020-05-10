@@ -69,10 +69,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "optimy-pwa-app:build",
-            "ssl": true,
-            "sslKey": "./security/ssl/key.pem",
-            "sslCert": "./security/ssl/cert.pem"
+            "browserTarget": "optimy-pwa-app:build"
           },
           "configurations": {
             "production": {

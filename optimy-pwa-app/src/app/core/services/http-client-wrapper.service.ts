@@ -3,13 +3,15 @@ import {HttpClient} from '@angular/common/http';
 import {Observable, of, throwError} from 'rxjs';
 import {environment} from 'src/environments/environment';
 import {catchError, delay, map, mergeMap, retryWhen} from 'rxjs/operators';
+import {Constants} from 'src/app/core/constants/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpClientWrapperService {
-
-  constructor(private httpClient: HttpClient) { }
+  usertoken: string;
+  constructor(private httpClient: HttpClient) {
+  }
 
   public post<I, T>(userInContext: string, apiRoute: string, body: I): Observable<T> {
     const httpCall = this.httpClient.post<T>(environment.baseApiUrl + apiRoute, body, {
@@ -45,18 +47,25 @@ export class HttpClientWrapperService {
   }
 
   private buildHeaders(userInContext: string): any {
-    const authorization = 'r0MrA268ORAobX53qkoaohaA7g9ek3JJ';
-
+    const authorization = Constants.apptoken;
+    this.usertoken = localStorage.getItem(Constants.userToken) || null;
     const header = {
       'x-username': userInContext || '',
       'x-request-id': Math.random().toString(36).replace('0.', ''),
     };
-
     if (authorization) {
-      return {
-        ...header,
-        apptoken: authorization
-      };
+      if (this.usertoken) {
+        return {
+          ...header,
+          apptoken: authorization,
+          usertoken: this.usertoken
+        };
+      } else {
+        return {
+          ...header,
+          apptoken: authorization
+        };
+      }
     }
 
     return header;

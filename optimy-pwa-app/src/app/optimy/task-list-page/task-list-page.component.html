@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="task-list__body">
+  <div class="">
+    <div class="my-task">My Tasks</div>
+  </div>
+  <div *ngFor="let task of taskList" class="task-list__item" (click)="getTaskDetails(task.id)">
+    <div class="row">
+      <div class="col-9">
+        <div >{{task?.attr?.description}}</div>
+      </div>
+      <div class="col-3">
+        <span class="priority-label priority-label__{{task?.attr?.priority}}">{{task?.attr?.priority}}</span>
+      </div>
+      <div class="col-12">
+        <div class="task-date mt-5">
+          <h4>Task Start Date: </h4>
+          <span>Start On: {{task?.start_dt}}</span>
+        </div>
+        <div class="task-date mt-5">
+          <h4>Task Due Date: </h4>
+          <span>Start On: {{task?.due_dt}}</span>
+        </div>
+        <div class=" mt-5">
+          <label class="task-label">Category: {{task?.attr?.label}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

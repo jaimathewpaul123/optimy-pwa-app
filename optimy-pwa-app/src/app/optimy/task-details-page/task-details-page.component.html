@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="task-list__detail">
+  <div class="">
+    <div class="my-task">Task Details</div>
+  </div>
+  <div class="task-list__item">
+    <div class="row">
+      <div class="col-9">
+        <div >{{taskDetail?.attr?.description}}</div>
+      </div>
+      <div class="col-3">
+        <span class="priority-label priority-label__{{taskDetail?.attr?.priority}}">{{taskDetail?.attr?.priority}}</span>
+      </div>
+      <div class="col-12">
+        <div class="task-date mt-5">
+          <h4>Task Start Date: </h4>
+          <span>Start On: {{taskDetail?.start_dt}}</span>
+        </div>
+        <div class="task-date mt-5">
+          <h4>Task Due Date: </h4>
+          <span>Start On: {{taskDetail?.due_dt}}</span>
+        </div>
+        <div class="more_info mt-5">
+          <ul>
+            <li class="mt-2">Status: {{taskDetail?.status}}</li>
+            <li class="mt-2">Assignee: {{taskDetail?.assignee}}</li>
+            <li class="mt-2">Creator: {{taskDetail?.creator}}</li>
+            <li class="mt-2">Reminder Date: {{taskDetail?.reminder_dt}}</li>
+          </ul>
+        </div>
+        <div class=" mt-5">
+          <label class="task-label">Category: {{taskDetail?.attr?.label}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
