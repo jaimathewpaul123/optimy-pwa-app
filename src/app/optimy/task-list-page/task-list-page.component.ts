@@ -3,7 +3,7 @@ import {Constants} from 'src/app/core/constants/constants';
 import {catchError} from 'rxjs/operators';
 import {UtilsService} from 'src/app/core/services/utils.service';
 import {Task, TaskRequestBody} from 'src/app/core/constants/common.enum';
-import {of} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {Router} from '@angular/router';
 
 @Component({
@@ -31,6 +31,6 @@ export class TaskListPageComponent implements OnInit {
 
   getTaskDetails(id) {
     this.utils.getTaskDetails(id);
-    this.router.navigateByUrl(Constants.routes.taskDetails);
+    this.router.navigateByUrl(`${Constants.routes.taskHome}/${id}`);
   }
 }

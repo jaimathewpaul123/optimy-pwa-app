@@ -3,8 +3,8 @@ export const Routes = {
   empty: '',
   wildCard: '**',
   login: 'login',
-  taskHome: 'taskList',
-  taskDetails: 'task-details'
+  taskHome: 'tasks',
+  taskDetails: 'tasks/:id'
 };
 
 

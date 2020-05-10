@@ -27,26 +27,27 @@ export class UtilsService {
       );
   }
 
-  getTaskList(requestBody) {
+  getTaskList(requestBody): Observable<Task[]> {
     if (this.taskList) {
       return of(this.taskList);
     } else {
-      return this.httpClientWrapper.post('sample', Constants.apiPaths.getTaskList, requestBody)
-        .pipe(map((res: ListResponse) => {
-          this.taskList = res.data.map(task => {
-            task.attr = JSON.parse(task.attr);
-            return task;
-          });
-          return this.taskList;
-        }));
+     return this.callTaskApi(requestBody).pipe(map((res: ListResponse) => {
+        this.taskList = res.data.map(task => {
+          task.attr = JSON.parse(task.attr);
+          return task;
+        });
+        return this.taskList;
+      }));
     }
   }
-  getTaskDetails(id) {
-     this.taskList.filter(item => {
-      if (item.id === id) {
-        this.taskDetails = item;
-      }
-    });
+  getTaskDetails(requestBody): Observable<Task> {
+     return this.callTaskApi(requestBody).pipe(map((res: ListResponse) => {
+       res.data[0].attr = JSON.parse(res.data[0].attr);
+       return res.data[0];
+     }));
+  }
+  callTaskApi(requestBody) {
+    return this.httpClientWrapper.post('sample', Constants.apiPaths.getTaskList, requestBody);
   }
   setUserToken(userToken) {
     localStorage.setItem(Constants.userToken, userToken);

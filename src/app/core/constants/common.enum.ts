@@ -13,7 +13,7 @@ export interface ListResponse {
 }
 export interface TaskRequestBody {
   parent_id?: string;
-  id?: string;
+  id?: number;
 }
 export interface Task {
   'id': number;
