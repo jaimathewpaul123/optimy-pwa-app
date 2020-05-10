@@ -3,7 +3,7 @@ import {HttpClientWrapperService} from 'src/app/core/services/http-client-wrappe
 import {Constants} from 'src/app/core/constants/constants';
 import {catchError, map} from 'rxjs/operators';
 import {ListResponse, Task, UserInfo} from 'src/app/core/constants/common.enum';
-import {Observable, of} from 'rxjs';
+import {Observable, of, throwError} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,11 @@ export class UtilsService {
         this.setUserToken(res.user_token);
         this.isLoggedIn = true;
         return res;
-    }));
+    })).pipe(
+      catchError(e => {
+        return throwError(e);
+      })
+      );
   }
 
   getTaskList(requestBody) {

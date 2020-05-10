@@ -3,9 +3,9 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Constants} from 'src/app/core/constants/constants';
 import {UtilsService} from 'src/app/core/services/utils.service';
 import {Router} from '@angular/router';
-import {catchError} from 'rxjs/operators';
+import {catchError, map} from 'rxjs/operators';
 import {of} from 'rxjs';
-import {LoginRequestBody} from 'src/app/core/constants/common.enum';
+import {LoginRequestBody, UserInfo} from 'src/app/core/constants/common.enum';
 
 @Component({
   selector: 'app-login-page',
@@ -36,10 +36,12 @@ export class LoginPageComponent implements OnInit {
         tenantid: Constants.tenantid
       };
       this.utils.login(loginRequestBody).subscribe(response => {
+        console.log(response);
         this.router.navigateByUrl(Constants.routes.taskHome);
-      }, catchError(e =>
-        this.loginError = e
-      ));
+      }, (error) => {
+        console.log('Error in loading exchange channels information:', error);
+        this.loginError = error;
+      });
     }
   }
 }
