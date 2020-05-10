@@ -5,7 +5,7 @@ const fs = require('fs');
 const app = express();
 
 const DIST = './dist/optimy-pwa-app';
-const PORT = 8080;
+const PORT = 8081;
 const DIST_DIR = path.join(__dirname, DIST);
 
 const template = fs.readFileSync(path.join(DIST_DIR, 'index.html')).toString();
