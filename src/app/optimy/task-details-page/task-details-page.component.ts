@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Task, TaskRequestBody} from 'src/app/core/constants/common.enum';
 import {UtilsService} from 'src/app/core/services/utils.service';
 import {Constants} from 'src/app/core/constants/constants';
