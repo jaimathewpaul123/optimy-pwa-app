@@ -52,4 +52,7 @@ export class UtilsService {
   setUserToken(userToken) {
     localStorage.setItem(Constants.userToken, userToken);
   }
+  setLogInStatus(status) {
+    this.isLoggedIn = status;
+  }
 }
