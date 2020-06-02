@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: 'https://staging-core-optimy.com',
+  baseApiUrl: '',
 };
 
 /*

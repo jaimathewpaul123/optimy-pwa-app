@@ -53,19 +53,15 @@ export class HttpClientWrapperService {
       'x-username': userInContext || '',
       'x-request-id': Math.random().toString(36).replace('0.', ''),
     };
-    if (authorization) {
-      if (this.usertoken) {
-        return {
-          ...header,
-          apptoken: authorization,
-          usertoken: this.usertoken
-        };
-      } else {
-        return {
-          ...header,
-          apptoken: authorization
-        };
-      }
+    if (this.usertoken) {
+      return {
+        ...header,
+        usertoken: this.usertoken
+      };
+    } else {
+      return {
+        ...header,
+      };
     }
 
     return header;
