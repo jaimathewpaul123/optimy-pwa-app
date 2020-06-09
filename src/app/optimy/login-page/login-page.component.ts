@@ -4,6 +4,7 @@ import {Constants} from 'src/app/core/constants/constants';
 import {UtilsService} from 'src/app/core/services/utils.service';
 import {Router} from '@angular/router';
 import {LoginRequestBody, UserInfo} from 'src/app/core/constants/common.enum';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-login-page',
@@ -20,13 +21,15 @@ export class LoginPageComponent implements OnInit {
   });
   constructor(
     private utils: UtilsService,
-    private router: Router) { }
+    private router: Router,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
   }
 
   login() {
     this.isFormSubmitted = true;
+    this.spinner.show();
     if (this.loginForm.valid) {
       const loginRequestBody: LoginRequestBody = {
         email: this.loginForm?.value?.userName,
@@ -34,6 +37,7 @@ export class LoginPageComponent implements OnInit {
         tenantid: Constants.tenantid
       };
       this.utils.login(loginRequestBody).subscribe(response => {
+        this.spinner.hide();
         this.router.navigateByUrl(Constants.routes.taskHome);
       }, (error) => {
         this.loginError = error;

@@ -12,6 +12,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { TaskListPageComponent } from './optimy/task-list-page/task-list-page.component';
 import { HeaderComponent } from './optimy/header/header.component';
 import { TaskDetailsPageComponent } from './optimy/task-details-page/task-details-page.component';
+import {NgxSpinnerModule} from 'ngx-spinner';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { TaskDetailsPageComponent } from './optimy/task-details-page/task-detail
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     ReactiveFormsModule,
     HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

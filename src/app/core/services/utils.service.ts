@@ -20,11 +20,10 @@ export class UtilsService {
         this.setUserToken(res.user_token);
         this.isLoggedIn = true;
         return res;
-    })).pipe(
+      })).pipe(
       catchError(e => {
         return throwError(e);
-      })
-      );
+      }));
   }
 
   getTaskList(requestBody): Observable<Task[]> {
